@@ -4,7 +4,7 @@
   "description": "",
   "main": "api/dist/app.js",
   "scripts": {
-    "api:prettier": "prettier --write 'api/src/*.ts'",
+    "api:prettier": "prettier --write 'api/src/**/*.ts'",
     "api:lint": "npm run api:prettier && tslint -c tslint.json -p tsconfig.json --fix",
     "api:build": "npm run api:lint && tsc",
     "api:server": "ts-node-dev --ignore-watch node_modules api/src/app.ts",
