@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "api/dist",
+
+  },
+  "include": [
+    "api/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".vscode"
+  ]
+}
