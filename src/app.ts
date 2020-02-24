@@ -1,9 +1,10 @@
-import dotenv from 'dotenv';
-import app from './server';
+import express from 'express';
+import { getCats, getCatsMashes, addCatPoint } from './controllers/cats';
 
-dotenv.config();
-const port = process.env.SERVER_PORT || 3000;
+const app = express();
 
-app.listen(port, () => {
-  return console.log(`server is listening on ${port}`);
-});
+app.get('/cats', getCats);
+app.get('/cats/mashes', getCatsMashes);
+app.post('/cats/:id/add_point', addCatPoint);
+
+export default app;

@@ -2,13 +2,13 @@
   "name": "catmash",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist/server.js",
   "scripts": {
     "prettier": "prettier --write 'src/**/*.ts'",
     "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "npm run lint && tsc",
-    "server": "ts-node-dev --ignore-watch node_modules src/app.ts",
-    "start": "npm run build && node dist/app.js",
+    "server": "ts-node-dev --ignore-watch node_modules src/server.ts",
+    "start": "npm run build && node dist/server.js",
     "test": "jest"
   },
   "husky": {
