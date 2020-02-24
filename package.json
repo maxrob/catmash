@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "prettier": "prettier --write 'src/**/*.ts'",
-    "lint": "npm run prettier && tslint -c tslint.json -p tsconfig.json --fix",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "npm run lint && tsc",
     "server": "ts-node-dev --ignore-watch node_modules src/app.ts",
     "start": "npm run build && node dist/app.js",
