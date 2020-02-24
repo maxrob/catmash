@@ -11,7 +11,7 @@ const getCats = async (req: Request, res: Response) => {
 const getCatsMashes = async (req: Request, res: Response) => {
   const limit: number = req.query.limit || DEFAULT_FIGHTS_LIMIT;
   let catsMashes = [];
-  for (let i = 0; i <= limit; i++) {
+  for (let i = 0; i < limit; i++) {
     const catsMash = await getCatsMash();
     catsMashes = [...catsMashes, catsMash];
   }
@@ -19,7 +19,7 @@ const getCatsMashes = async (req: Request, res: Response) => {
 };
 
 const getCatsMash = async () => {
-  await Cat.aggregate([{ $sample: { size: 2 } }]);
+  return Cat.aggregate([{ $sample: { size: 2 } }]);
 };
 
 const addCatPoint = async (req: Request, res: Response) => {
