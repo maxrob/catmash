@@ -9,19 +9,29 @@
     "build": "npm run lint && tsc",
     "server": "ts-node-dev --ignore-watch node_modules src/app.ts",
     "start": "npm run build && node dist/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
     }
   },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "@types/jest": "^25.1.3",
     "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^6.0.0",
