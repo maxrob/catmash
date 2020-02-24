@@ -2,18 +2,18 @@
   "name": "catmash",
   "version": "1.0.0",
   "description": "",
-  "main": "api/dist/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "api:prettier": "prettier --write 'api/src/**/*.ts'",
-    "api:lint": "npm run api:prettier && tslint -c tslint.json -p tsconfig.json --fix",
-    "api:build": "npm run api:lint && tsc",
-    "api:server": "ts-node-dev --ignore-watch node_modules api/src/app.ts",
-    "api:start": "npm run api:build && node api/dist/app.js",
-    "api:test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write 'src/**/*.ts'",
+    "lint": "npm run prettier && tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "npm run lint && tsc",
+    "server": "ts-node-dev --ignore-watch node_modules src/app.ts",
+    "start": "npm run build && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run api:lint"
+      "pre-commit": "npm run lint"
     }
   },
   "author": "",

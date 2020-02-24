@@ -9,22 +9,22 @@ npm install
 ## API :
 ### Launch server with hot-reloads
 ```Bash
-npm run api:server
+npm run server
 ```
 
 ### Launch project linter
 ```Bash
-npm run api:lint
+npm run lint
 ```
 
 ### Build project
 ```Bash
-npm run api:build
+npm run build
 ```
 
 ### Start project 
 ```Bash
-npm run api:start
+npm run start
 ```
 
 
