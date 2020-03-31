@@ -3,17 +3,17 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectDB = () => {
+const connectDB: () => any = () => {
   mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  const db = mongoose.connection;
+  const db: any = mongoose.connection;
   db.on('error', error => console.error(error));
   db.once('open', () => console.log('connected to database'));
 };
 
-const disconnectDB = async () => {
+const disconnectDB: () => any = async () => {
   await mongoose.disconnect();
 };
 

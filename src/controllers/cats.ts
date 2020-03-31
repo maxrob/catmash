@@ -1,30 +1,30 @@
 import { Request, Response } from 'express';
-import { Cat } from '../models/cat';
+import Cat, { CatType } from '../models/cat.model';
 
 const DEFAULT_FIGHTS_LIMIT = 20;
 
-const getCats = async (req: Request, res: Response) => {
-  const cats = await Cat.find();
+const getCats: (req: Request, res: Response) => Promise<void> = async (req: Request, res: Response) => {
+  const cats: CatType[] = await Cat.find();
   res.json(cats.sort((a, b) => (a.score <= b.score ? 1 : -1)));
 };
 
-const getCatsMashes = async (req: Request, res: Response) => {
+const getCatsMashes: (req: Request, res: Response) => Promise<void> = async (req: Request, res: Response) => {
   const limit: number = req.query.limit || DEFAULT_FIGHTS_LIMIT;
-  let catsMashes = [];
+  let catsMashes: CatType[] = [];
   for (let i = 0; i < limit; i++) {
-    const catsMash = await getCatsMash();
+    const catsMash : CatType = await getCatsMash();
     catsMashes = [...catsMashes, catsMash];
   }
   res.json(catsMashes);
 };
 
-const getCatsMash = async () => {
+const getCatsMash: () => Promise<CatType> = async () => {
   return Cat.aggregate([{ $sample: { size: 2 } }]);
 };
 
-const addCatPoint = async (req: Request, res: Response) => {
+const addCatPoint: (req: Request, res: Response) => Promise<void> = async (req: Request, res: Response) => {
   try {
-    const response = await Cat.findOneAndUpdate(
+    const response: any = await Cat.findOneAndUpdate(
       { _id: req.params.id },
       { $inc: { score: 1 } },
       { new: true }
