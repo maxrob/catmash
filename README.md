@@ -6,6 +6,15 @@
 npm install
 ```
 
+Create new MongoDB database and populate with file in : `/src/res/cats.fixtures.json`
+
+Create new file `.env` and add following lines :
+
+```Bash
+PORT=<your port>
+DATABASE_URL=<your mongodb url>
+```
+
 ## API :
 
 ### Launch server with hot-reloads
