@@ -4,9 +4,9 @@ import Cat, { CatType } from '../models/cat.model';
 const DEFAULT_FIGHTS_LIMIT = 20;
 
 const getCats: (req: Request, res: Response) => Promise<void> = async (req: Request, res: Response) => {
-  console.log("Test")
+  console.log('Test')
   const cats: CatType[] = await Cat.find();
-  console.log("Test 2")
+  console.log('Test 2')
   console.log(cats);
   res.json(cats.sort((a, b) => (a.score <= b.score ? 1 : -1)));
 };

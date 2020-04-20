@@ -3,7 +3,7 @@ import app from './app';
 import { connectDB } from './lib/mongoose';
 
 dotenv.config();
-const port: string = process.env.SERVER_PORT || '3000';
+const port: string = process.env.PORT || '3000';
 connectDB();
 
 app.listen(port, () => {
