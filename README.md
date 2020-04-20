@@ -15,7 +15,7 @@ Create new file `.env` and add following lines :
 
 ```Bash
 PORT=<your port>
-DATABASE_URL=<your mongodb url>
+MONGODB_URI=<your mongodb url>
 ```
 
 ## API :
