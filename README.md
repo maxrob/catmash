@@ -1,4 +1,7 @@
-# Catmash
+# Catmash Api
+
+- Available on : <https://maxrob-catmash.herokuapp.com/catmash>
+- Catmash client : <https://github.com/maxrob/catmash-client>
 
 ### Install Project:
 
